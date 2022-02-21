@@ -1,0 +1,27 @@
+create database studentdb;
+use studentdb;
+
+create table Student(Stdid int not null,Sname varchar(20),class int);
+select *from Student;
+insert into Student(Stdid,Sname,class)values(12,'Abhaya',12);
+insert into Student(Stdid,Sname,class)values(15,'Srinda',12);
+update Student set class=11 where Stdid=15;
+delete from Student where Sname='Srinda';
+create table Marks(rollno int not null,sub varchar(20),mark int,age int);
+select *from Marks;
+insert into Marks values(28,'physics',76,15);
+ insert into Marks values(12,'physics',69,16);
+ insert into Marks values(28,'chemistry',59,15);
+  insert into Marks values(10,'chemistry',80,16);
+   insert into Marks values(15,'chemistry',78,15);
+update Marks set marks=79 where rollno=15;
+ alter table Marks add Stdname varchar(20);
+ select Sname,class from Student;
+ select distinct sub from Marks;
+ select count(distinct sub) from Marks;
+ select *from Marks where rollno=12;
+ select rollno from Marks where mark between 75 and 90;
+ select *from Marks order by rollno;
+ select max(mark) as highest from Marks;
+ select avg(mark) from Marks;
+select avg(mark) as averagemark from Marks group by sub;
